@@ -1,2 +1,2 @@
-from csv_wordcount import read_csv_and_count, tidy_string_def
+from csv_wordcount import csv_wordcount, tidy_strings
 
