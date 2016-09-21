@@ -35,7 +35,7 @@ def tidy_strings(string_list):
 
 # Core functions.
 
-def csv_wordcount(file, cols, del_exp, tidy_func=tidy_strings):
+def csv_wordcount(file, cols, tidy_func=tidy_strings):
     """
     Read a CSV file and perform word-count on target columns.
 
@@ -49,12 +49,10 @@ def csv_wordcount(file, cols, del_exp, tidy_func=tidy_strings):
 
     def add_answers():
         """Add the answers to the result."""
-        print(del_exp)
         for answ in set(tidy_func(
                         filter(None, re.split("[\W]+", row[target[0]])))):
             result[target][answ] = result[target].setdefault(answ, 0) + 1
 
-    print(del_exp)
     reader = csv.reader(file)
     headers = reader.__next__()
     headers = [headers[col] for col in cols]
