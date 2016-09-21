@@ -21,10 +21,8 @@ def tidy_strings(string_list):
     Tidy a list of strings by removing trailing and starting whitespace, enforce
     lowercase and replace characters.
 
-    :param string_list:     A string to be tidied
-    :param repl_dict:       A dict with replacements as keys and a list of
-                            replaceables for that replacement as values.
-    :return:                A tidied string
+    :param string_list:     A list of strings to be tidied
+    :return:                A list of tidied string
     """
     res = []
     for string in string_list:
@@ -42,8 +40,6 @@ def csv_wordcount(file, cols, tidy_func=tidy_strings):
     :param file:            A CSV file.
     :param cols:            A list of indexes of target columns.
     :param tidy_func:       A function to tidy a list of strings.
-    :param del_exp:         A string with delimiter characters to split
-    answers.
     :return:                A dict containing the results.
     """
 
@@ -72,7 +68,7 @@ def sort_and_write_result(result, file, out_format, sort_func=lambda x: x[1],
 
     :param result:      A result dict used to store count of answers for
                         target columns.
-    :param file:    The output file.
+    :param file:        The output file.
     :param out_format:  A string modeling the output format for result rows
                         that contains three placeholders for idx, word and
                         count.
